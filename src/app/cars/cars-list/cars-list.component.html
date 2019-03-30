@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <table *ngIf="cars.length > 0 ; else noCarsInfo" class="table cs-table table-striped">
+        <thead>
+        <tr>
+          <th>car</th>
+          <th>plate</th>
+          <th>delivery date</th>
+          <th>deadline</th>
+          <th>client</th>
+          <th>cost</th>
+          <th>action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let car of cars">
+          <td [ngClass]="{'row-error': car.isFullyDamaged}">{{car.model}}</td>
+          <td>{{ car.plate }}</td>
+          <td>{{car.deliveryDate}}</td>
+          <td>{{car.deadline}}</td>
+          <td>{{car.client.firstName}}{{car.client.surname}}</td>
+          <td>{{car.cost}}</td>
+          <td>Action placeholder</td>
+        </tr>
+        </tbody>
+      </table>
+      <ng-template #noCarsInfo >
+        <div class="no-cars-info">
+          <p>Currently no cars in service</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <button (click)="showGross()" class="btn btn-primary float-right btn-sm">SHOW GROSS</button>
+    </div>
+  </div>
+  <app-total-cost #totalCostRef [totalCost]="totalCost" (shownGross)="onShownGross($event)"></app-total-cost>
+  <div class="row" *ngIf="grossCost">
+    <div class="col-sm-12">
+      <div class="total-cost" >
+        <p class="text-right">
+          TOTAL GROSS COST: {{ grossCost }} PLN
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
