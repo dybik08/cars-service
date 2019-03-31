@@ -1,9 +1,11 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {CarsService} from '../cars.service';
 
 @Component({
   selector: 'app-total-cost',
   templateUrl: './total-cost.component.html',
-  styleUrls: ['./total-cost.component.less']
+  styleUrls: ['./total-cost.component.less'],
+  providers: [CarsService],
 })
 export class TotalCostComponent {
   @Input() totalCost: number;

@@ -1,4 +1,3 @@
-import {Client} from './client';
 
 export interface Car {
   id: number;
@@ -6,7 +5,10 @@ export interface Car {
   plate: string;
   deliveryDate: string;
   deadline: string;
-  client: Client;
+  color: string;
+  power: number;
+  clientFirstName: string;
+  clientSurname: string;
   cost: number;
   isFullyDamaged: boolean;
 }

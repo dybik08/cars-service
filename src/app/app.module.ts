@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import {CarsModule} from './cars/cars.module';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
+import { SidebarComponent } from './core-modules/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

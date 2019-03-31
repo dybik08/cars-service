@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <table *ngIf="cars.length > 0 ; else noCarsInfo" class="table cs-table table-striped">
+      <table *ngIf="cars && cars.length > 0 ; else noCarsInfo" class="table cs-table table-striped">
         <thead>
         <tr>
           <th>car</th>
@@ -19,7 +19,7 @@
           <td>{{ car.plate }}</td>
           <td>{{car.deliveryDate}}</td>
           <td>{{car.deadline}}</td>
-          <td>{{car.client.firstName}}{{car.client.surname}}</td>
+          <td>{{car.clientFirstName}}{{car.clientSurname}}</td>
           <td>{{car.cost}}</td>
           <td>Action placeholder</td>
         </tr>
