@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import {CarsModule} from './cars/cars.module';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import { SidebarComponent } from './core-module/sidebar/sidebar.component';
 import {CoreModuleModule} from './core-module/core-module.module';
+import {CarsRoutingModule} from './cars/cars-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {CoreModuleModule} from './core-module/core-module.module';
     HttpModule,
     FormsModule,
     CarsModule,
-    CoreModuleModule
+    CoreModuleModule,
+    CarsRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
