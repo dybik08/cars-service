@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {CoreModuleModule} from './core-module/core-module.module';
 import {CarsRoutingModule} from './cars/cars-routing.module';
+import {CarsService} from './cars/cars.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import {CarsRoutingModule} from './cars/cars-routing.module';
     CoreModuleModule,
     CarsRoutingModule
   ],
-  providers: [],
+  providers: [CarsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
