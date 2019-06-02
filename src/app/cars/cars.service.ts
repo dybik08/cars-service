@@ -20,7 +20,7 @@ export class CarsService {
   }
 
   getCar(id: number): Observable<Car> {
-    return this.http.get(`/${id}`)
+    return this.http.get(`${this.apiUrl}/${id}`)
             .map((res) => res.json());
   }
 }
