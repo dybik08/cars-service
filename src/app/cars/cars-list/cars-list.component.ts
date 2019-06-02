@@ -15,7 +15,7 @@ export class CarsListComponent implements OnInit {
   totalCost: number;
   grossCost: number;
 
-  cars: Car[];
+  cars: Car[] = [];
 
 
   constructor(private carsService: CarsService) {

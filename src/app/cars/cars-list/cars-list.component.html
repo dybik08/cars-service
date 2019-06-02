@@ -1,14 +1,14 @@
 <app-header>
   <p levels>cars</p>
   <div content>
-    <p>Some text</p>
+    <p>List of cars in service</p>
   </div>
 </app-header>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <table *ngIf="cars && cars.length > 0 ; else noCarsInfo" class="table cs-table table-striped">
+      <table *ngIf="cars && cars.length > 0; else noCarsInfo" class="cs-table table table-striped">
         <thead>
         <tr>
           <th>car</th>
