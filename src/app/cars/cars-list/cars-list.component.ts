@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {Car} from '../models/car';
 import {TotalCostComponent} from '../total-cost/total-cost.component';
 import {CarsService} from '../cars.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cars-list',
@@ -18,12 +19,16 @@ export class CarsListComponent implements OnInit {
   cars: Car[] = [];
 
 
-  constructor(private carsService: CarsService) {
+  constructor(private carsService: CarsService, private router: Router) {
   }
 
   ngOnInit() {
     this.loadCars();
 
+  }
+
+  async goToCarDetails(car: Car) {
+    await this.router.navigate(['/cars', car.id]);
   }
 
   loadCars(): void {
