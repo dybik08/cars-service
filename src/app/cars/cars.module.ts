@@ -6,13 +6,15 @@ import {SharedModuleModule} from '../shared-module/shared-module.module';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import {RouterModule} from '@angular/router';
 import {CarResolve} from './car-resolve.service';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [CarsListComponent, TotalCostComponent, CarDetailsComponent],
   imports: [
     CommonModule,
     SharedModuleModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [CarsListComponent],
   providers: [CarResolve]

@@ -13,6 +13,7 @@
         <tr>
           <th>car</th>
           <th>plate</th>
+          <th>type</th>
           <th>delivery date</th>
           <th>deadline</th>
           <th>client</th>
@@ -24,6 +25,7 @@
         <tr *ngFor="let car of cars; let i = index" (click)="goToCarDetails(car)" class="row-car" >
           <td [ngClass]="{'row-error': car.isFullyDamaged}">{{car.model}}</td>
           <td>{{ car.plate }}</td>
+          <td>{{ car.type }}</td>
           <td>{{car.deliveryDate}}</td>
           <td>{{car.deadline}}</td>
           <td>{{car.clientFirstName}}{{car.clientSurname}}</td>
@@ -59,65 +61,62 @@
 <p class="data-header">Add a new car</p>
 
 <div class="data-container">
-  <form>
+  <form [formGroup]="carForm">
     <div class="row form-group">
       <div class="col-sm-4">
         <label>Model</label>
-        <input type="text" class="form-control" placeholder="model">
+        <input formControlName="model" type="text" class="form-control" placeholder="model">
       </div>
       <div class="col-sm-4">
         <label>Type</label>
-        <input type="text" class="form-control" placeholder="type">
+        <input formControlName="type" type="text" class="form-control" placeholder="type">
       </div>
       <div class="col-sm-4">
         <label>Plate</label>
-        <input type="text" class="form-control" placeholder="plate">
+        <input formControlName="plate" type="text" class="form-control" placeholder="plate">
       </div>
     </div>
 
     <div class="row form-group">
       <div class="col-sm-4">
         <label>Delivery date</label>
-        <input type="text" class="form-control" placeholder="delivery date">
+        <input formControlName="deliveryDate" type="text" class="form-control" placeholder="delivery date">
       </div>
       <div class="col-sm-4">
         <label>Deadline</label>
-        <input type="text" class="form-control" placeholder="deadline">
+        <input formControlName="deadline" type="text" class="form-control" placeholder="deadline">
       </div>
-      <div class="col-sm-4">
-        <label>Color</label>
-        <input type="text" class="form-control" placeholder="color">
-      </div>
-    </div>
-
-    <div class="row form-group">
-      <div class="col-sm-4">
-        <label>Power</label>
-        <input type="text" class="form-control" placeholder="power">
-      </div>
-      <div class="col-sm-4">
-        <label>Client First Name</label>
-        <input type="text" class="form-control" placeholder="client first name">
-      </div>
-      <div class="col-sm-4">
-        <label>Client Last Name</label>
-        <input type="text" class="form-control" placeholder="client last name">
-      </div>
-    </div>
-
-    <div class="row form-group">
       <div class="col-sm-4">
         <label>Cost</label>
-        <input type="text" class="form-control" placeholder="cost">
+        <input formControlName="cost" type="text" class="form-control" placeholder="cost">
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-sm-4">
+        <label>Color</label>
+        <input formControlName="color" type="text" class="form-control" placeholder="color">
       </div>
       <div class="col-sm-4">
-        <label>Plate</label>
-        <input type="text" class="form-control" placeholder="plate">
+        <label>Power</label>
+        <input formControlName="power" type="text" class="form-control" placeholder="power">
       </div>
       <div class="col-sm-4">
         <label>Is car fully damaged</label>
-        <input type="checkbox">
+        <input formControlName="isFullyDamaged" type="checkbox">
       </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-sm-4">
+        <label>Client First Name</label>
+        <input formControlName="clientFirstName" type="text" class="form-control" placeholder="client first name">
+      </div>
+      <div class="col-sm-4">
+        <label>Client Last Name</label>
+        <input formControlName="clientSurname" type="text" class="form-control" placeholder="client last name">
+      </div>
+
     </div>
 
     <div class="row">
@@ -126,6 +125,6 @@
       </div>
     </div>
 
-
   </form>
+
 </div>

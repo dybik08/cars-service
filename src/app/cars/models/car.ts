@@ -11,5 +11,6 @@ export interface Car {
   clientSurname: string;
   cost: number;
   isFullyDamaged: boolean;
+  type: string;
 }
 
