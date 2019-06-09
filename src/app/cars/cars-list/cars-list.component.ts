@@ -3,7 +3,7 @@ import {Car} from '../models/car';
 import {TotalCostComponent} from '../total-cost/total-cost.component';
 import {CarsService} from '../cars.service';
 import {Router} from '@angular/router';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-cars-list',
@@ -34,8 +34,8 @@ export class CarsListComponent implements OnInit {
 
   buildCarForm() {
     return this.formBuilder.group({
-        model: '',
-        plate: '',
+        model: ['', Validators.required],
+        plate: ['',[Validators.required, Validators.minLength(3), Validators.maxLength(7)]],
         deliveryDate: '',
         deadline: '',
         color: '',
