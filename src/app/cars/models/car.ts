@@ -12,5 +12,6 @@ export interface Car {
   cost: number;
   isFullyDamaged: boolean;
   type: string;
+  year: string;
 }
 
