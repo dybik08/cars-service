@@ -44,7 +44,8 @@ export class CarsListComponent implements OnInit {
         clientSurname: '',
         cost: '',
         isFullyDamaged: '',
-        type: ''
+        type: '',
+        year: ''
     });
   }
 
@@ -56,6 +57,12 @@ export class CarsListComponent implements OnInit {
     this.carsService.getCars().subscribe(cars => {
       this.cars = cars;
       this.calculateTotalCost();
+    });
+  }
+
+  addCar() {
+    this.carsService.addCar(this.carForm.value).subscribe(() => {
+      this.loadCars();
     });
   }
 

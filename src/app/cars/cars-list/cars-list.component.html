@@ -118,12 +118,17 @@
         <label>Client Last Name</label>
         <input formControlName="clientSurname" type="text" class="form-control" placeholder="client last name">
       </div>
+      <div class="col-sm-4">
+        <label>Year</label>
+        <input formControlName="year" type="text" class="form-control" placeholder="year">
+      </div>
 
     </div>
 
     <div class="row">
       <div class="col-sm-12">
-        <button [disabled]="carForm.invalid" type="submit" class="btn btn-primary float-right">Add car</button>
+        <button [disabled]="carForm.invalid" (click)="addCar()" type="submit" class="btn btn-primary float-right">Add car</button>
+        <button (click)="carForm.reset()" class="btn btn-default float-right">Reset</button>
       </div>
     </div>
 
